@@ -4,7 +4,7 @@ using namespace std;
 int main() 
 {
     cout << "Hello Inventory System!\n";
-    cout << "Int size:\t" << sizeof(int) << "\n";
-    cout << "Float size:\t" << sizeof(float) << "\n";
-    cout << "Char size:\t" << sizeof(char);
+    cout << "Int size:\t" << sizeof(int) << "bytes\n";
+    cout << "Float size:\t" << sizeof(float) << "bytes\n";
+    cout << "Char size:\t" << sizeof(char) << "bytes";
 }
