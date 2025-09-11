@@ -4,7 +4,6 @@ int main() {
     int selection;
     double price;
     char choice;
-    char fryChoice[] = {'S', 'M', 'L'};
     double menuPrices[] = {6.99, 3.99, 4.99, 5.99, 8.99, 2.99};
     cout << "1. Turkey Burger $6.99\n2. Fries S: $3.99 M: 4.99 L: $5.99\n3. Deluxe Turkey Burger $8.99\n4. Drink $2.99\n5. Combo Meal\n";
     cout << "What would you like? ";
