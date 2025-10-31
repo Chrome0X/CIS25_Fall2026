@@ -1,7 +1,9 @@
 #include <iostream>
 #include "Stuff.h"
+using namespace std;
+
 void showMenu(){
-    std::cout << "1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Exit\n";
+    cout << "1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Exit\n";
 }
 int addSelf(int a){
     return a + a;
