@@ -1,0 +1,4 @@
+Transactions
+Deposit: $1000
+Hot Chocolatepurchase: $4.5
+PG RX-78-2 Gundam Model Kitpurchase: $298.69
