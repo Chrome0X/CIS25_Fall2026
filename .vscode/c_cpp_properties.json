@@ -3,12 +3,17 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/Users/araias/Documents/GitHub/CIS25_Fall2026/SFML-3.0.2/include",
+                "/Users/araias/Documents/GitHub/CIS25_Fall2026/SFML-3.0.2/include/SFML",
+                "/Users/araias/Documents/GitHub/CIS25_Fall2026/SFML-3.0.2/include/SFML/Graphics",
+                "/Users/araias/Documents/GitHub/CIS25_Fall2026/SFML-3.0.2/include/SFML/Window",
+                "/Users/araias/Documents/GitHub/CIS25_Fall2026/SFML-3.0.2/include/SFML/System"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",
             "cStandard": "c17",
-            "cppStandard": "c++14",
+            "cppStandard": "c++17",
             "intelliSenseMode": "macos-clang-arm64"
         }
     ],
