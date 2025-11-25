@@ -7,10 +7,17 @@
             "args": [
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
+                "-std=c++17",
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-I${workspaceFolder}/SFML-3.0.2/include",
+                "-L${workspaceFolder}/SFML-3.0.2/lib",
+                "-lsfml-graphics",
+                "-lsfml-window",
+                "-lsfml-system",
+                "-Wl,-rpath,${workspaceFolder}/SFML-3.0.2/lib"
             ],
             "options": {
                 "cwd": "${fileDirname}"

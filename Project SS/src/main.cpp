@@ -1,6 +1,6 @@
-#include </Users/araias/Documents/GitHub/CIS25_Fall2026/SFML-3.0.2/include/SFML/Graphics.hpp>
-#include </Users/araias/Documents/GitHub/CIS25_Fall2026/SFML-3.0.2/include/SFML/Window.hpp>
-#include </Users/araias/Documents/GitHub/CIS25_Fall2026/SFML-3.0.2/include/SFML/System.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/System.hpp>
 
 #include <iostream>
 #include <string>
