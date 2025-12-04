@@ -39,7 +39,7 @@ class BankAccount{
     void makePurchase(string description, double cost){
         if (cost <= balance){
             balance -= cost;
-            logTransaction(description + "purchase", cost);
+            logTransaction(description + " purchase", cost);
             cout << description << ": -$" << cost << endl;
         }
         else {
