@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/araias/Documents/GitHub/CIS25_Fall2026/Week 15/main'
+relocations:     []
+...
