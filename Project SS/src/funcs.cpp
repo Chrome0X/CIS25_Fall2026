@@ -10,39 +10,40 @@ bool intersects(const sf::FloatRect& a, const sf::FloatRect& b)
             a.position.y + a.size.y > b.position.y);
 }
 
-Player::Player() : texture(), sprite(texture) {
-    texture.loadFromFile("assets/player.png");
-    sprite.setOrigin({
-        static_cast<float>(texture.getSize().x) / 2.f,
-        static_cast<float>(texture.getSize().y) / 2.f
-    });
-    sprite.setPosition({400.f, 300.f});
+// ------------------ Player ------------------
+
+Player::Player() {
+    shape.setRadius(25.f);
+    shape.setFillColor(sf::Color::Green);
+    shape.setOrigin({25.f, 25.f});
+    shape.setPosition({400.f, 300.f});
 }
 
 void Player::update(float dt) {
-    // player does not move in this game
+    // Player is stationary
 }
 
 
-Enemy::Enemy(float speed) : speed(speed), texture(), sprite(texture) {
-    texture.loadFromFile("assets/enemy.png");
-    sprite.setOrigin({
-        static_cast<float>(texture.getSize().x) / 2.f,
-        static_cast<float>(texture.getSize().y) / 2.f
-    });
+Enemy::Enemy(float speed) : speed(speed) {
+    shape.setSize({40.f, 40.f});
+    shape.setFillColor(sf::Color::Red);
+    shape.setOrigin({20.f, 20.f});
 
-    float y = static_cast<float>(rand() % 600);
+    float y = 250.f + static_cast<float>(rand() % 100);
+
     if (rand() % 2 == 0)
-        sprite.setPosition({0.f, y});
+        shape.setPosition({0.f, y});
     else
-        sprite.setPosition({800.f, y});
+        shape.setPosition({800.f, y});
 }
 
-Projectile::Projectile(sf::Vector2f startPos) {
+Projectile::Projectile(sf::Vector2f startPos, sf::Vector2f dir)
+{
     shape.setRadius(5.f);
     shape.setFillColor(sf::Color::Yellow);
-    shape.setPosition(startPos);
     shape.setOrigin({5.f, 5.f});
+    shape.setPosition(startPos);
+    direction = dir;
 }
 
 void spawnEnemy(std::vector<Enemy>& enemies) {
@@ -51,16 +52,16 @@ void spawnEnemy(std::vector<Enemy>& enemies) {
 
 void updateEnemies(std::vector<Enemy>& enemies, sf::Vector2f playerPos, float dt) {
     for (auto &e : enemies) {
-        sf::Vector2f dir = playerPos - e.sprite.getPosition();
+        sf::Vector2f dir = playerPos - e.shape.getPosition();
 
         float len = std::sqrt(dir.x*dir.x + dir.y*dir.y);
         if (len != 0) dir /= len;
 
-        e.sprite.move(dir * e.speed * dt);
+        e.shape.move(dir * e.speed * dt);
     }
 }
 
 void updateProjectiles(std::vector<Projectile>& projectiles, float dt) {
     for (auto &p : projectiles)
-        p.shape.move({0.f, -p.speed * dt});
+        p.shape.move(p.direction * p.speed * dt);
 }

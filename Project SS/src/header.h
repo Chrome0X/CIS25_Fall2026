@@ -6,27 +6,28 @@ using namespace std;
 
 bool intersects(const sf::FloatRect& a, const sf::FloatRect& b);
 
+
 struct Player {
-    sf::Texture texture;
-    sf::Sprite sprite;
-    int health = 100;
+    sf::CircleShape shape;
+    int health = 200;
 
     Player();
     void update(float dt);
 };
 
 struct Enemy {
-    sf::Texture texture;
-    sf::Sprite sprite;
+    sf::RectangleShape shape;
     float speed;
+
     Enemy(float speed = 100.f);
 };
 
 struct Projectile {
     sf::CircleShape shape;
     float speed = 500.f;
+    sf::Vector2f direction;
 
-    Projectile(sf::Vector2f startPos);
+    Projectile(sf::Vector2f startPos, sf::Vector2f dir);
 };
 
 void spawnEnemy(std::vector<Enemy>& enemies);

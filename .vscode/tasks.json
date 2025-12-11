@@ -32,7 +32,7 @@
                 "-Wl,-rpath,${workspaceFolder}/SFML-3.0.2/lib"
             ],
             "options": {
-                "cwd": "${workspaceFolder}"
+                "cwd": "${workspaceFolder}/Project SS"
             },
             "problemMatcher": [
                 "$gcc"
